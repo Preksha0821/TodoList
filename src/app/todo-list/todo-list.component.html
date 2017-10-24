@@ -1,0 +1,14 @@
+<div class="container">
+  <!--Title : Todo list-->
+  <h3>{{title}}</h3>
+  <hr/>
+  <!--Input and button for todo list-->
+  <input type="text" placeholder="Enter your todo text here" name="todoText" [(ngModel)]="todoText"  >
+  <button class="btn btn-primary" type="submit" (click)="todoListData({text:todoText,status:true})">Add</button>
+  <hr/>
+  <!--Loop for todo text and checkbox-->
+  <div *ngFor="let todo of todoList">
+    <input type="checkbox" name="status" [(ngModel)]="todo.status" >
+    <span>{{todo.text}}</span>
+  </div>
+</div>
